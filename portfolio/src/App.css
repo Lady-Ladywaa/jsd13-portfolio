@@ -1,0 +1,859 @@
+
+/* ========================================
+   RESET
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  background: #f5f2ed;
+  color: #171717;
+}
+
+a {
+  color: inherit;
+}
+
+main {
+  width: 100%;
+}
+
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 22px 5vw;
+
+  color: white;
+
+  mix-blend-mode: difference;
+}
+
+.logo {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.logo span {
+  font-style: italic;
+}
+
+.main-nav {
+  display: flex;
+  gap: 28px;
+}
+
+.main-nav a {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.main-nav a:hover {
+  opacity: 0.55;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+  width: 100%;
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+  background: #8f101b;
+  color: white;
+
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 120px 7vw 80px;
+}
+
+.hero-label,
+.section-label {
+  margin: 0;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hero-label {
+  margin-bottom: 28px;
+}
+
+.hero h1 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(64px, 8vw, 110px);
+  font-weight: 400;
+
+  line-height: 0.88;
+  letter-spacing: -0.055em;
+}
+
+.hero h1 span {
+  font-style: italic;
+}
+
+.hero-description {
+  max-width: 450px;
+
+  margin: 40px 0 0;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 28px;
+
+  margin-top: 38px;
+}
+
+.hero-actions a {
+  position: relative;
+
+  padding-bottom: 7px;
+
+  color: white;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+
+  text-decoration: none;
+}
+
+.hero-actions a::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: white;
+
+  transition: transform 0.3s ease;
+
+  transform-origin: left;
+}
+
+.hero-actions a:hover::after {
+  transform: scaleX(0.35);
+}
+
+.hero-visual {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+
+  min-width: 0;
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+
+/* ========================================
+   GENERAL SECTIONS
+======================================== */
+
+.section {
+  padding: 130px 7vw;
+}
+
+.section-label {
+  color: #8f101b;
+}
+
+
+/* ========================================
+   ABOUT
+======================================== */
+
+.about-section {
+  background: #f5f2ed;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+
+  gap: 10vw;
+
+  margin-top: 80px;
+}
+
+.about-grid h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(48px, 6vw, 82px);
+  font-weight: 400;
+
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.about-grid h2 em {
+  color: #8f101b;
+}
+
+.about-content {
+  max-width: 520px;
+}
+
+.about-content p {
+  margin: 0 0 24px;
+
+  font-size: 16px;
+  line-height: 1.8;
+  color: #4d4d4d;
+}
+
+
+/* ========================================
+   SECTION HEADING
+======================================== */
+
+.section-heading {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+
+  gap: 60px;
+
+  margin: 70px 0 50px;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(55px, 7vw, 100px);
+  font-weight: 400;
+
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+}
+
+.section-heading p {
+  margin: 10px 0 0;
+
+  color: #5c5c5c;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* ========================================
+   EXPERIENCE
+======================================== */
+
+.experience-section {
+  background: #ebe7e1;
+}
+
+.experience-list {
+  border-top: 1px solid #bcb7b0;
+}
+
+.experience-item {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+
+  gap: 50px;
+
+  padding: 45px 0;
+
+  border-bottom: 1px solid #bcb7b0;
+}
+
+.experience-date {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #777;
+}
+
+.experience-main h3 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.experience-main h4 {
+  margin: 8px 0 20px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: #8f101b;
+}
+
+.experience-main p {
+  max-width: 700px;
+
+  margin: 0;
+
+  color: #555;
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* ========================================
+   TAGS
+======================================== */
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-top: 24px;
+}
+
+.tag-list span {
+  padding: 8px 12px;
+
+  border: 1px solid #bbb5ad;
+  border-radius: 100px;
+
+  font-size: 10px;
+  letter-spacing: 0.04em;
+}
+
+
+/* ========================================
+   PROJECTS
+======================================== */
+
+.projects-section {
+  background: #f5f2ed;
+}
+
+.project-card {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 100px 1fr;
+
+  gap: 50px;
+
+  padding: 60px;
+
+  background: #8f101b;
+  color: white;
+}
+
+.project-number {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 20px;
+  font-style: italic;
+
+  opacity: 0.7;
+}
+
+.project-info {
+  max-width: 850px;
+}
+
+.project-type {
+  margin: 0 0 20px;
+
+  font-size: 10px;
+  letter-spacing: 0.16em;
+}
+
+.project-info h3 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(65px, 9vw, 130px);
+  font-weight: 400;
+
+  line-height: 0.8;
+  letter-spacing: -0.06em;
+}
+
+.project-description {
+  max-width: 600px;
+
+  margin: 45px 0 0;
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.project-role {
+  max-width: 600px;
+
+  margin-top: 35px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.project-role strong {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.project-role p {
+  margin: 10px 0 0;
+
+  font-size: 14px;
+  line-height: 1.7;
+
+  opacity: 0.85;
+}
+
+.project-tags span {
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.project-link {
+  display: inline-block;
+
+  margin-top: 35px;
+
+  padding-bottom: 7px;
+
+  border-bottom: 1px solid white;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+.project-link:hover {
+  opacity: 0.6;
+}
+
+
+/* ========================================
+   EDUCATION
+======================================== */
+
+.education-section {
+  background: #ebe7e1;
+}
+
+.education-list {
+  margin-top: 75px;
+
+  border-top: 1px solid #bcb7b0;
+}
+
+.education-item {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+
+  gap: 50px;
+
+  padding: 40px 0;
+
+  border-bottom: 1px solid #bcb7b0;
+}
+
+.education-year {
+  font-size: 11px;
+  color: #777;
+}
+
+.education-item h3 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.education-item p {
+  margin: 15px 0 0;
+
+  color: #555;
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* ========================================
+   SKILLS
+======================================== */
+
+.skills-section {
+  background: #f5f2ed;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 100px;
+
+  margin-top: 80px;
+}
+
+.skill-group {
+  padding-top: 25px;
+
+  border-top: 1px solid #aaa49c;
+}
+
+.skill-group h3 {
+  margin: 0 0 35px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 35px;
+  font-weight: 400;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-list span {
+  padding: 12px 18px;
+
+  border: 1px solid #aaa49c;
+  border-radius: 100px;
+
+  font-size: 12px;
+}
+
+
+/* ========================================
+   CONTACT
+======================================== */
+
+.contact-section {
+  padding: 150px 7vw;
+
+  background: #8f101b;
+  color: white;
+}
+
+.contact-inner {
+  max-width: 900px;
+}
+
+.contact-section .section-label {
+  color: white;
+}
+
+.contact-section h2 {
+  margin: 65px 0 35px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(70px, 10vw, 150px);
+  font-weight: 400;
+
+  line-height: 0.82;
+  letter-spacing: -0.06em;
+}
+
+.contact-section h2 em {
+  font-style: italic;
+}
+
+.contact-section p:not(.section-label) {
+  max-width: 550px;
+
+  margin: 0;
+
+  font-size: 15px;
+  line-height: 1.8;
+
+  opacity: 0.85;
+}
+
+.contact-email {
+  display: inline-block;
+
+  margin-top: 35px;
+
+  padding-bottom: 8px;
+
+  border-bottom: 1px solid white;
+
+  color: white;
+
+  font-size: 14px;
+  text-decoration: none;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 25px 5vw;
+
+  background: #151515;
+  color: white;
+}
+
+.footer p {
+  margin: 0;
+
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.social-links a {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #555;
+  border-radius: 50%;
+
+  color: white;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.social-links a:hover {
+  background: white;
+  color: #151515;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+  .main-nav {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+  }
+
+  .hero-content {
+    padding: 130px 8vw 60px;
+
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-visual {
+    min-height: auto;
+
+    padding-bottom: 70px;
+  }
+
+  .about-grid,
+  .section-heading {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .section-heading {
+    margin-top: 50px;
+  }
+
+  .experience-item,
+  .education-item {
+    grid-template-columns: 120px 1fr;
+
+    gap: 25px;
+  }
+
+  .skills-grid {
+    gap: 50px;
+  }
+
+  .project-card {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+    padding: 45px 35px;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .site-header {
+    padding: 18px 24px;
+  }
+
+  .section {
+    padding: 90px 24px;
+  }
+
+  .hero-content {
+    padding: 110px 24px 40px;
+  }
+
+  .hero h1 {
+    font-size: clamp(58px, 17vw, 78px);
+  }
+
+  .hero-description {
+    margin-top: 30px;
+
+    font-size: 14px;
+  }
+
+  .hero-actions {
+    gap: 22px;
+  }
+
+  .about-grid {
+    margin-top: 55px;
+  }
+
+  .about-grid h2 {
+    font-size: 54px;
+  }
+
+  .experience-item,
+  .education-item {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+
+    padding: 35px 0;
+  }
+
+  .experience-main h3,
+  .education-item h3 {
+    font-size: 27px;
+  }
+
+  .project-card {
+    padding: 35px 24px;
+  }
+
+  .project-info h3 {
+    font-size: 70px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+
+    margin-top: 55px;
+  }
+
+  .contact-section {
+    padding: 100px 24px;
+  }
+
+  .contact-section h2 {
+    margin-top: 50px;
+
+    font-size: 75px;
+  }
+
+  .footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+
+    padding: 25px 24px;
+  }
+}
+
