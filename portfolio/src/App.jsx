@@ -219,7 +219,7 @@ function App() {
             </div>
 
             <a
-              href="https://github.com/Lady-Ladywaa"
+              href="https://gt-monorepo.vercel.app/accommodations"
               target="_blank"
               rel="noreferrer"
               className="project-link"
