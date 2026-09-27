@@ -24,3 +24,9 @@ select {
   font: inherit;
 }
 
+/* Custom Cursor */
+html,
+body,
+* {
+  cursor: none;
+}

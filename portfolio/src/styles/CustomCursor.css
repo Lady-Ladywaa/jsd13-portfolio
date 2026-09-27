@@ -1,0 +1,30 @@
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 80px;
+  height: 80px;
+
+  pointer-events: none;
+  z-index: 9999;
+
+  opacity: 0;
+
+  transition: opacity 0.25s ease;
+
+  will-change: transform, opacity;
+}
+
+.custom-cursor.is-visible {
+  opacity: 1;
+}
+
+.custom-cursor img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  display: block;
+}

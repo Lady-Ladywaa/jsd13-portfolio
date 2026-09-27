@@ -1,9 +1,14 @@
 
 import PortraitReveal from "./components/PortraitReveal";
 import "./App.css";
+import CustomCursor from "./components/CustomCursor";
 
 function App() {
   return (
+    
+      <>
+      <CustomCursor />
+
     <main>
       {/* =========================
           NAVIGATION
@@ -378,6 +383,7 @@ function App() {
         </div>
       </footer>
     </main>
+    </>
   );
 }
 
