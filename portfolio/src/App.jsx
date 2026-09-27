@@ -229,10 +229,58 @@ function App() {
               rel="noreferrer"
               className="project-link"
             >
-              View GitHub ↗
+              Live Demo ↗
             </a>
           </div>
         </article>
+
+            {/* =========================
+            PROJECT 02 — POKEMON
+        ========================= */}
+        <article className="project-card">
+          <div className="project-number">02</div>
+
+          <div className="project-info">
+            <p className="project-type">
+              PERSONAL PROJECT / WEB APPLICATION
+            </p>
+
+            <h3>Pokémon Random & Search</h3>
+
+            <p className="project-description">
+              An interactive Pokémon web application that allows users
+              to randomly generate Pokémon or search by name or ID
+              using the PokéAPI.
+            </p>
+
+            <div className="project-role">
+              <strong>What I Built</strong>
+              <p>
+                Implemented API integration, asynchronous data fetching,
+                Pokémon search, random generation, loading animation
+                and interactive Pokémon cards using JavaScript.
+              </p>
+            </div>
+
+            <div className="tag-list project-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>REST API</span>
+              <span>PokéAPI</span>
+            </div>
+
+            <a
+              href="jsd13-pokemon-dom.vercel.app"
+              target="_blank"
+              rel="noreferrer"
+              className="project-link"
+            >
+              Live Demo ↗
+            </a>
+          </div>
+        </article>
+
       </section>
 
       {/* =========================
