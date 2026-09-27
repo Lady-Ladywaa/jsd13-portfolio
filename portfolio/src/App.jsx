@@ -224,7 +224,7 @@ function App() {
             </div>
 
             <a
-              href="https://gt-monorepo.vercel.app/accommodations"
+              href="https://gt-monorepo.vercel.app"
               target="_blank"
               rel="noreferrer"
               className="project-link"
