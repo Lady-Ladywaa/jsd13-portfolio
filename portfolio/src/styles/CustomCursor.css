@@ -11,9 +11,9 @@
 
   opacity: 0;
 
-  transition: opacity 0.25s ease;
-
   will-change: transform, opacity;
+
+  transition: opacity 0.25s ease;
 }
 
 .custom-cursor.is-visible {
@@ -25,6 +25,31 @@
   height: 100%;
 
   object-fit: contain;
-
   display: block;
+}
+
+/* ตัวหลังจะเล็กลงและจางลง */
+.custom-cursor:nth-child(2) {
+  opacity: 0.75;
+  transform: scale(0.9);
+}
+
+.custom-cursor:nth-child(3) {
+  opacity: 0.55;
+  transform: scale(0.8);
+}
+
+.custom-cursor:nth-child(4) {
+  opacity: 0.4;
+  transform: scale(0.7);
+}
+
+.custom-cursor:nth-child(5) {
+  opacity: 0.25;
+  transform: scale(0.6);
+}
+
+.custom-cursor:nth-child(6) {
+  opacity: 0.12;
+  transform: scale(0.5);
 }

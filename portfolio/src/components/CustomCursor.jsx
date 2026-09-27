@@ -3,39 +3,42 @@ import "../styles/CustomCursor.css";
 
 import cursorFace from "../assets/images/cursor-face.png";
 
-function CustomCursor() {
-  const cursorRef = useRef(null);
+const TRAIL_COUNT = 6;
 
+function CustomCursor() {
+  const cursorsRef = useRef([]);
   const mouse = useRef({
     x: window.innerWidth / 2,
     y: window.innerHeight / 2,
   });
 
-  const current = useRef({
-    x: window.innerWidth / 2,
-    y: window.innerHeight / 2,
-  });
+  const positions = useRef(
+    Array.from({ length: TRAIL_COUNT }, () => ({
+      x: window.innerWidth / 2,
+      y: window.innerHeight / 2,
+    }))
+  );
 
   useEffect(() => {
     const handleMouseMove = (event) => {
       mouse.current.x = event.clientX;
       mouse.current.y = event.clientY;
 
-      if (cursorRef.current) {
-        cursorRef.current.classList.add("is-visible");
-      }
+      cursorsRef.current.forEach((cursor) => {
+        cursor?.classList.add("is-visible");
+      });
     };
 
     const handleMouseLeave = () => {
-      if (cursorRef.current) {
-        cursorRef.current.classList.remove("is-visible");
-      }
+      cursorsRef.current.forEach((cursor) => {
+        cursor?.classList.remove("is-visible");
+      });
     };
 
     const handleMouseEnter = () => {
-      if (cursorRef.current) {
-        cursorRef.current.classList.add("is-visible");
-      }
+      cursorsRef.current.forEach((cursor) => {
+        cursor?.classList.add("is-visible");
+      });
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -45,22 +48,37 @@ function CustomCursor() {
     let animationFrame;
 
     const animate = () => {
-      current.current.x +=
-        (mouse.current.x - current.current.x) * 0.12;
+      // ตัวแรกตามเมาส์
+      positions.current[0].x +=
+        (mouse.current.x - positions.current[0].x) * 0.18;
 
-      current.current.y +=
-        (mouse.current.y - current.current.y) * 0.12;
+      positions.current[0].y +=
+        (mouse.current.y - positions.current[0].y) * 0.18;
 
-      if (cursorRef.current) {
-        cursorRef.current.style.transform = `
+      // ตัวต่อ ๆ ไปตามตัวก่อนหน้า
+      for (let i = 1; i < TRAIL_COUNT; i++) {
+        positions.current[i].x +=
+          (positions.current[i - 1].x - positions.current[i].x) * 0.18;
+
+        positions.current[i].y +=
+          (positions.current[i - 1].y - positions.current[i].y) * 0.18;
+      }
+
+      // แสดงตำแหน่งของแต่ละตัว
+      cursorsRef.current.forEach((cursor, index) => {
+        if (!cursor) return;
+
+        const position = positions.current[index];
+
+        cursor.style.transform = `
           translate3d(
-            ${current.current.x}px,
-            ${current.current.y}px,
+            ${position.x}px,
+            ${position.y}px,
             0
           )
           translate(-50%, -50%)
         `;
-      }
+      });
 
       animationFrame = requestAnimationFrame(animate);
     };
@@ -77,13 +95,20 @@ function CustomCursor() {
   }, []);
 
   return (
-    <div
-      ref={cursorRef}
-      className="custom-cursor"
-      aria-hidden="true"
-    >
-      <img src={cursorFace} alt="" />
-    </div>
+    <>
+      {Array.from({ length: TRAIL_COUNT }).map((_, index) => (
+        <div
+          key={index}
+          ref={(element) => {
+            cursorsRef.current[index] = element;
+          }}
+          className="custom-cursor"
+          aria-hidden="true"
+        >
+          <img src={cursorFace} alt="" />
+        </div>
+      ))}
+    </>
   );
 }
 
