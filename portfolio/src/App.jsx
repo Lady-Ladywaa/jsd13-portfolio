@@ -281,6 +281,57 @@ function App() {
           </div>
         </article>
 
+           {/* =========================
+            PROJECT 03 — Wa-Vibe Fashion
+        ========================= */}
+
+<article className="project-card">
+  <div className="project-number">03</div>
+
+  <div className="project-info">
+    <p className="project-type">
+      PERSONAL PROJECT / E-COMMERCE WEB APPLICATION
+    </p>
+
+    <h3>Wa-Vibe Fashion</h3>
+
+    <p className="project-description">
+      An interactive Muslim fashion e-commerce concept that supports
+      both product purchases and clothing rentals.
+    </p>
+
+    <div className="project-role">
+      <strong>What I Built</strong>
+      <p>
+        Designed and developed the frontend interface and interactive
+        features using HTML, CSS and JavaScript, including product
+        filtering, shopping cart management, wishlist, authentication
+        UI, quick view, rental date selection, rental fee and deposit
+        calculation, and responsive navigation.
+      </p>
+    </div>
+
+    <div className="tag-list project-tags">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>E-commerce UI</span>
+      <span>Responsive Design</span>
+    </div>
+
+    <a
+      href="https://jsd13-vibecode-myecommerce.vercel.app/"
+      target="_blank"
+      rel="noreferrer"
+      className="project-link"
+    >
+      Live Demo ↗
+    </a>
+  </div>
+</article>
+
+
+
       </section>
 
       {/* =========================
